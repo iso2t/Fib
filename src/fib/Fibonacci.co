@@ -9,7 +9,7 @@ class is Runner {
         self.CountTo = data.GetCountTo();
     }
 
-    func Run (Type type) {
+    override func Run (Type type) {
         if (type == Type.ITERATIVE) {
             iterative();
         } 
