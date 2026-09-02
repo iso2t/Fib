@@ -1,0 +1,7 @@
+import fib::Type;
+
+interface {
+
+    func Run (Type type);
+
+}
