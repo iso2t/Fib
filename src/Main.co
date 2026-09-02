@@ -1,5 +1,6 @@
 import fib::Fibonacci;
 import fib::Type;
+import api::Data;
 
 // Main entry method
 static func Main () {
@@ -7,9 +8,12 @@ static func Main () {
     // Random number to count to. Its low as I am impatient. 
     uint countTo = 15;
 
+    // Create a Data instance with the specified countTo value.
+    Data data = Data(uint64(countTo));
+
     // Create a Fibonacci instance with the specified countTo value.
     // This also tests converting a uint (32-bit) to a uint64 (64-bit) via "casting".
-    var fib = Make(uint64(countTo));
+    var fib = Make(data);
     
     // Passes a test enum value to the Run method.
     fib.Run(Type.RECURSIVE);
@@ -19,6 +23,6 @@ static func Main () {
 }
 
 // Constructs a Fibonacci instance with the specified countTo value.
-static func Make(uint64 countTo): Fibonacci {
-    return Fibonacci(countTo);
+static func Make(Data data): Fibonacci {
+    return Fibonacci(data);
 }

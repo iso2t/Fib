@@ -1,11 +1,12 @@
 import fib::Type;
 import api::Runner;
+import api::Data;
 
 class is Runner {
     uint64 CountTo;
 
-    Fibonacci (uint64 countTo) {
-        self.CountTo = countTo;
+    Fibonacci (Data data) {
+        self.CountTo = data.GetCountTo();
     }
 
     func Run (Type type) {

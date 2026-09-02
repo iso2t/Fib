@@ -1,0 +1,12 @@
+struct {
+    uint64 countTo;
+
+    Data (uint64 countTo) {
+        self.countTo = countTo;
+    }
+
+    func GetCountTo (): uint64 {
+        return self.countTo;
+    }
+
+}
