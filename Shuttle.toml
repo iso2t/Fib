@@ -1,0 +1,10 @@
+manifest-version = 1
+
+[package]
+name = "fib"
+version = "0.1.1"
+
+[executable]
+entry = "Main.co"
+
+[dependencies]

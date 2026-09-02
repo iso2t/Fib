@@ -1,0 +1,44 @@
+import fib::Type;
+
+uint64 CountTo;
+
+Fibonacci (uint64 countTo) {
+    self.CountTo = countTo;
+}
+
+func Run(Type type) {
+    if (type == Type.ITERATIVE) {
+        iterative();
+    } 
+    
+    if (type == Type.RECURSIVE) {
+        var result = recursive(CountTo);
+        println("Recursive Fibonacci result: ");
+        println(result);
+    }
+}
+
+func iterative () {
+    print("Iterative Fibonacci up to ");
+    print(CountTo);
+    println();
+
+    uint64 firstTerm = 0;
+    uint64 secondTerm = 1;
+
+    for (uint64 i = 0; i < CountTo; i++) {
+        println(firstTerm);
+        uint64 nextTerm = firstTerm + secondTerm;
+        firstTerm = secondTerm;
+        secondTerm = nextTerm;
+    }
+
+    println("Iterative Fibonacci complete.");
+}
+
+func recursive (uint64 n): uint64 {
+    if (n <= 1) {
+        return n;
+    }
+    return recursive(n - 1) + recursive(n - 2);
+}
