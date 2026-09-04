@@ -10,14 +10,17 @@ class is Runner {
     }
 
     override func Run (Type type) {
-        if (type == Type.ITERATIVE) {
-            iterative();
-        } 
-    
-        if (type == Type.RECURSIVE) {
-            var result = recursive(CountTo);
-            println("Recursive Fibonacci result: ");
-            println(result);
+        switch (type) {
+            case Type.ITERATIVE: {
+                iterative();
+                break;
+            }
+            case Type.RECURSIVE: {
+                var result = recursive(CountTo);
+                println("Recursive Fibonacci result: ");
+                println(result);
+                break;
+            }
         }
     }
 

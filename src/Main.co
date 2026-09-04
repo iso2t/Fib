@@ -6,7 +6,10 @@ import api::Data;
 static func Main () {
 
     // Random number to count to. Its low as I am impatient. 
-    uint countTo = 15;
+    // Could make this a uint32 on default, but im testing 
+    // explicit endedness for u32. 
+    // TODO: When an input default func is available, use it to set countTo.
+    var countTo = 15u32;
 
     // Create a Data instance with the specified countTo value.
     Data data = Data(uint64(countTo));
@@ -18,8 +21,9 @@ static func Main () {
     // Passes a test enum value to the Run method.
     fib.Run(Type.RECURSIVE);
 
-    println(Type.RECURSIVE::typeName);
-    println(Type.ITERATIVE::typeName);
+    println();
+
+    fib.Run(Type.ITERATIVE);
 }
 
 // Constructs a Fibonacci instance with the specified countTo value.
