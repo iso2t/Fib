@@ -9,7 +9,7 @@ static func Main () {
     // Could make this a uint32 on default, but im testing 
     // explicit endedness for u32. 
     // TODO: When an input default func is available, use it to set countTo.
-    var countTo = 15u32;
+    var countTo = 0xF; // 15
 
     // Create a Data instance with the specified countTo value.
     Data data = Data(uint64(countTo));
