@@ -1,15 +1,20 @@
 import fib::Fibonacci;
 import fib::Type;
 import api::Data;
+import api::BelowZeroError;
 
 // Main entry method
-static func Main () {
+static func Main () throws BelowZeroError {
 
     // Random number to count to. Its low as I am impatient. 
     // Could make this a uint32 on default, but im testing 
     // explicit endedness for u32. 
     // TODO: When an input default func is available, use it to set countTo.
-    var countTo = 0xF; // 15
+    var countTo = 0xFu32; // 15
+
+    if (countTo <= 0) {
+        throw BelowZeroError("Count must be greater than zero."); 
+    }
 
     // Create a Data instance with the specified countTo value.
     Data data = Data(uint64(countTo));

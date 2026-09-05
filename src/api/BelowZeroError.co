@@ -1,0 +1,13 @@
+error {
+
+    final string message;
+
+    BelowZeroError (string message): Error(message) {
+        self.message = message;
+    }
+
+    func GetMessage(): string {
+        return self.message;
+    }
+
+}
