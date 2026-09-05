@@ -2,6 +2,7 @@ import fib::Fibonacci;
 import fib::Type;
 import api::Data;
 import api::BelowZeroError;
+import cloth.math::Math;
 
 // Main entry method
 static func Main () throws BelowZeroError {
@@ -29,6 +30,10 @@ static func Main () throws BelowZeroError {
     println();
 
     fib.Run(Type.ITERATIVE);
+
+    println();
+
+    println(Math.PI);
 }
 
 // Constructs a Fibonacci instance with the specified countTo value.
