@@ -38,7 +38,7 @@ static func Main (string[] args) throws BelowZeroError {
 }
 
 static func printArgs (string[] args) {
-    for (arg in args) {
+    for (var arg in args) {
         println(arg);
     }
 }
