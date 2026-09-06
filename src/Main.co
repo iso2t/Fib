@@ -5,7 +5,8 @@ import api::BelowZeroError;
 import cloth.math::Math;
 
 // Main entry method
-static func Main () throws BelowZeroError {
+static func Main (string[] args) throws BelowZeroError {
+    printArgs(args);
 
     // Random number to count to. Its low as I am impatient. 
     // Could make this a uint32 on default, but im testing 
@@ -34,6 +35,12 @@ static func Main () throws BelowZeroError {
     println();
 
     println(Math.PI);
+}
+
+static func printArgs (string[] args) {
+    for (arg in args) {
+        println(arg);
+    }
 }
 
 // Constructs a Fibonacci instance with the specified countTo value.
