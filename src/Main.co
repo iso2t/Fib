@@ -3,19 +3,17 @@ import fib::Type;
 import api::Data;
 import api::BelowZeroError;
 import cloth.math::Math;
+import cloth.io::Console;
 
 // Main entry method
-static func Main (string[] args) throws BelowZeroError {
-    printArgs(args);
-
-    // Random number to count to. Its low as I am impatient. 
-    // Could make this a uint32 on default, but im testing 
-    // explicit endedness for u32. 
-    // TODO: When an input default func is available, use it to set countTo.
-    var countTo = 0xFu32; // 15
+static func Main (string[] args) throws BelowZeroError, IoError, ParseError {
+    println("Enter a number: ");
+    string? input = Console.ReadLine();
+    var countTo = uint32::parse(input ?? "0");
 
     if (countTo <= 0) {
-        throw BelowZeroError("Count must be greater than zero."); 
+        println("Count must be greater than zero.");
+        return;
     }
 
     // Create a Data instance with the specified countTo value.
